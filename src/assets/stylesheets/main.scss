@@ -1,0 +1,16 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+@import '../../../node_modules/vue-material/src/components/mdOnboarding/mdBoards.scss'
+
