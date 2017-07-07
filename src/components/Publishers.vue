@@ -82,7 +82,7 @@
 
     .publishers {
       width: 75%;
-      margin: 110px auto 100px;
+      margin: 110px auto 90px;
       display: flex;
 
       &__item {

@@ -9,6 +9,7 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
+      mode: 'history',
       component: Home
     }
   ]

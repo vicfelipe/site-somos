@@ -55,7 +55,6 @@
 <style lang="scss">
   .network__container {
     background-color: #fff;
-    padding: 0 12.5%;
 
     .title {
       text-align: center;
@@ -69,6 +68,13 @@
         color: #EC3680;
         font-weight: bold;
       }
+    }
+
+    .carousel-container {
+      display: flex;
+      justify-content: space-between;
+      width: 84%;
+      margin: 0 auto;
     }
 
     .carousel-item {

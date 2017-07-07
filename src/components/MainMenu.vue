@@ -1,13 +1,14 @@
 <template>
   <div class="menu__container">
+  <a name="top"></a>
     <header>
-      <h1 class="logo"></h1>
+      <h1 class="logo" @click="scroll('menu')"></h1>
       <nav>
         <ul class="menu-list">
-          <li class="menu-item">Quem somos</li>
-          <li class="menu-item">Resultados</li>
-          <li class="menu-item">Rede</li>
-          <li class="menu-item">Soluções Educacionais</li>
+          <li class="menu-item" @click="scroll('about-us')">Quem somos</li>
+          <li class="menu-item" @click="scroll('results')">Resultados</li>
+          <li class="menu-item" @click="scroll('network')">Rede</li>
+          <li class="menu-item" @click="scroll('solutions')">Soluções Educacionais</li>
         </ul>
       </nav>
       <div class="call-me">
@@ -23,14 +24,53 @@
 </template>
 
 <script>
+  import $ from 'jquery'
+
   export default {
-    name: 'main-menu'
+    name: 'main-menu',
+    methods: {
+      scroll (target) {
+        target = document.querySelector('.' + target + '__container')
+        event.preventDefault()
+        var newOffSetTop = target.offsetTop - 75
+
+        if (newOffSetTop < 0) {
+          newOffSetTop = 0
+        }
+
+        $('html, body').animate({
+          scrollTop: newOffSetTop
+        }, 1000, function () {
+          var $target = $(target)
+          $target.focus()
+          if ($target.is(':focus')) {
+            return false
+          } else {
+            $target.attr('tabindex', '-1')
+            $target.focus()
+          }
+        })
+      }
+    }
   }
+
 </script>
 <style lang="scss">
   .menu__container {
     z-index: 1;
     height: 76px;
+    position: fixed;
+    width: 100%;
+
+
+    a {
+      color: #fff;
+      text-decoration: none;
+
+      &:hover {
+       text-decoration: underline;
+      }
+    }
 
     header {
       background-color: rgba(200, 20, 86, .8);
@@ -53,6 +93,7 @@
           font-size: 14px;
           color: #fff;
           text-transform: uppercase;
+          cursor: pointer;
         }
       }
       .logo {
@@ -61,6 +102,7 @@
         padding: 0;
         margin: 0;
         flex-grow: 0;
+        cursor: pointer;
         background: url(/static/images/logo.svg) no-repeat;
       }
 
