@@ -2,59 +2,60 @@
   <div class="network__container">
     <h1 class="title">Nossa <span>rede satisfeita</span></h1>
 
-    <carousel>
-      <slide>
-        <div class="carousel-item">
-          <div class="avatar-container">
-            <img src="/static/images/satisfeitos/avatar1.png">
-          </div>
-          <div class="content">
-            <p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.”</p>
-            <p>
-              <strong>João Monteiro</strong><br>
-              Professor
-            </p>
-          </div>
+    <div class="carousel-container">
+      <div v-for="slide in slides" class="carousel-item" :style="{ backgroundImage: slide.bgimage }">
+        <div class="avatar-container">
+          <img :src="slide.avatar">
         </div>
-      </slide>
-      <slide>
-        <div class="carousel-item">
-          <div class="avatar-container">
-            <img src="/static/images/satisfeitos/avatar1.png">
-          </div>
-          <div class="content">
-            <p>“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.”</p>
-            <p>
-              <strong>João Monteiro</strong><br>
-              Professor
-            </p>
-          </div>
+        <div class="content">
+          <p>{{ slide.text }}</p>
+          <p>
+            <strong>{{ slide.name }}</strong><br>
+            {{ slide.position }}
+          </p>
         </div>
-      </slide>
-    </carousel>
+      </div>
+    </div>
 
   </div>
 </template>
 
 <script>
-  import Vue from 'vue'
-  import { VueCarousel, Carousel, Slide } from 'vue-carousel'
-
-  Vue.use(VueCarousel)
-  Vue.use(Carousel)
-  Vue.use(Slide)
-
   export default {
     name: 'network',
-    components: {
-      Carousel,
-      Slide
+    data () {
+      return {
+        slides: [
+          {
+            avatar: '/static/images/satisfeitos/avatar1.png',
+            bgimage: 'url(/static/images/satisfeitos/bg1.png)',
+            text: '“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.”',
+            name: 'João Monteiro',
+            position: 'Professor'
+          },
+          {
+            avatar: '/static/images/satisfeitos/avatar2.png',
+            bgimage: 'url(/static/images/satisfeitos/bg2.png)',
+            text: '“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.”',
+            name: 'Maria Clara Souza',
+            position: 'Pedagoga'
+          },
+          {
+            avatar: '/static/images/satisfeitos/avatar3.png',
+            bgimage: 'url(/static/images/satisfeitos/bg3.png)',
+            text: '“Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.”',
+            name: 'Manuel Santos',
+            position: 'Estudante'
+          }
+        ]
+      }
     }
   }
 </script>
 <style lang="scss">
   .network__container {
-    background-color: #e1e1e1;
+    background-color: #fff;
+    padding: 0 12.5%;
 
     .title {
       text-align: center;
@@ -70,8 +71,27 @@
       }
     }
 
-    .VueCarousel-slide {
+    .carousel-item {
+      width: 300px;
+      border-radius: 5px;
+      border: 1px solid #000;
+      background: no-repeat center top #fff;
+      padding: 90px 20px 10px;
+      box-sizing: border-box;
+      background-position-y: -3px;
 
+      .avatar-container {
+          border: 1px solid red;
+          border-radius: 50px;
+          width: 90px;
+          height: 90px;
+          margin: 0 auto;
+
+        img {
+          border: 2px solid white;
+          border-radius: 50px;
+        }
+      }
     }
   }
 
