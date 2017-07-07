@@ -20,11 +20,23 @@
           <div class="brand-numbers__description">DOS ALUNOS DO BRASIL</div>
         </li>
         <li class="brand-numbers__list__item">
-          <div class="brand-numbers__number">40 <span>MILHÕES</span></div>
+          <div class="brand-numbers__number">40 <span class="small-text">MILHÕES</span></div>
           <div class="brand-numbers__description">DE LIVROS<br>PRODUZIDOS<br>ANUALMENTE</div>
         </li>
       </ul>
     </div>
+
+    <div class="brands">
+      <ul class="brands__list">
+        <li class="brands__list__item"><img src="/static/images/rede/logo-anglo.svg" alt="Anglo"></li>
+        <li class="brands__list__item"><img src="/static/images/rede/logo-ser.svg" alt="SER"></li>
+        <li class="brands__list__item"><img src="/static/images/rede/logo-maxi.svg" alt="Maxi"></li>
+        <li class="brands__list__item"><img src="/static/images/rede/editora-atica.svg" alt="Editora Ática"></li>
+        <li class="brands__list__item"><img src="/static/images/rede/editora-scipione.svg" alt="Editora Scipione"></li>
+        <li class="brands__list__item"><img src="/static/images/rede/editora-saraiva.svg" alt="Editora Saraiva"></li>
+      </ul>
+    </div>
+
   </div>
 </template>
 
@@ -90,10 +102,7 @@
 
         span {
           font-size: 13px;
-        }
-
-        &:last-of-type(2) {
-          span {
+          &.small-text {
             font-size: 7px;
           }
         }
@@ -101,6 +110,16 @@
 
       &__description {
         margin-left: 15px;
+      }
+    }
+
+    .brands {
+      margin: 70px 0;
+
+      &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
       }
     }
   }
