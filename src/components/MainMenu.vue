@@ -7,11 +7,12 @@
         <ul class="menu-list">
           <li class="menu-item" @click="scroll('about-us')">Quem somos</li>
           <li class="menu-item" @click="scroll('results')">Resultados</li>
-          <li class="menu-item" @click="scroll('network')">Rede</li>
           <li class="menu-item" @click="scroll('solutions')">Soluções Educacionais</li>
+          <li class="menu-item" @click="scroll('network')">Rede</li>
+          <li class="menu-item" @click="scroll('contact')">Contato</li>
         </ul>
       </nav>
-      <div class="call-me">
+      <div class="call-me" id="btCallMe" @click="openDialog('modalCallMe')">
         Ligamos para você
         <i class="icon-call-me"></i>
       </div>
@@ -20,6 +21,21 @@
         <li class="social__instagram"></li>
       </ul>
     </header>
+
+    <md-dialog md-open-from="#btCallMe" md-close-to="#btCallMe" ref="modalCallMe">
+      <md-dialog-title>A matéria pode ter um texto</md-dialog-title>
+      <md-dialog-content>
+        <div class="form-container">
+          <div class="form-container__left">
+            <input placeholder="Nome" id="nome" name="nome"  type="text">
+            <input placeholder="Email" id="email" name="email" type="text">
+            <input placeholder="DDD + Telefone" id="telefone" name="telefone" type="text">
+            <button id="enviar" name="enviar">Enviar</button>
+          </div>
+        </div>
+      </md-dialog-content>
+    </md-dialog>
+
   </div>
 </template>
 
@@ -29,6 +45,18 @@
   export default {
     name: 'main-menu',
     methods: {
+      openDialog (ref) {
+        this.$refs[ref].open()
+      },
+      closeDialog (ref) {
+        this.$refs[ref].close()
+      },
+      onOpen () {
+        console.log('Opened')
+      },
+      onClose (type) {
+        console.log('Closed', type)
+      },
       scroll (target) {
         target = document.querySelector('.' + target + '__container')
         event.preventDefault()
@@ -57,10 +85,10 @@
 </script>
 <style lang="scss">
   .menu__container {
-    z-index: 1;
+    z-index: 1000;
     height: 76px;
     position: fixed;
-    width: 100%;
+    width: 1280px;
 
 
     a {

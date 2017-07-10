@@ -48,7 +48,7 @@
 
 <style lang="scss">
   .about-us__container {
-    padding: 70px 80px;
+    padding: 30px 80px;
 
     .title {
       padding: 0;

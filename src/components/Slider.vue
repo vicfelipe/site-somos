@@ -21,7 +21,6 @@
 </script>
 <style lang="scss">
   .slider__container {
-    margin-top: -76px;
     overflow: hidden;
     height: 573px;
 
@@ -29,8 +28,5 @@
       padding: 0;
     }
 
-    .md-boards-navigation {
-      display: none;
-    }
   }
 </style>

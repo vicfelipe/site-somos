@@ -55,6 +55,7 @@
 <style lang="scss">
   .network__container {
     background-color: #fff;
+    padding-bottom: 80px;
 
     .title {
       text-align: center;
