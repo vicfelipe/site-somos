@@ -67,7 +67,7 @@
       margin: 0 auto;
 
       span {
-        font-size: 34px;
+        font-size: 30px;
         font-weight: bold;
       }
 
@@ -80,12 +80,22 @@
       margin: 0 auto;
       display: flex;
 
+      @media(max-width: 600px){
+        flex-direction: column;
+        width: 100%;
+      }
+
       &__right,
       &__left {
         width: 50%;
         display: flex;
         flex-direction: column;
         align-items: stretch;
+
+        @media(max-width: 600px){
+          width: 100%;
+          box-sizing: border-box;
+        }
       }
 
       &__left {

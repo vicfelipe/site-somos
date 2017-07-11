@@ -16,7 +16,7 @@
           O Melhor parceiro para aprovação nos vestibulares. O Anglo é referência no Brasil em aprovações nas universidades,
           além de estruturar a educação no município com seu calendário pedagógico. Com a proposta “Aula dada, aula estudada”,
           tem como foco desenvolver a autonomia nos alunos a partir de um projeto pedagógico único, articulado em todos os detalhes.
-          <a>Veja mais</a>
+          <br><br><a href="/static/pdf/laminas_Anglo-V5f-hotsite.pdf" target="_blank">Veja mais</a>
         </p>
       </div>
       <div class="teaching-systems__item bg-green">
@@ -27,12 +27,9 @@
           com as exigências do mundo contemporâneo, como a criatividade e o empreendedorismo. Oferece flexibilidade ao educador e
           se adapta ao formato pedagógico do município, baseando-se em seus três pilares: conhecimento prévio do aluno, formação
           leitora e desenvolvimento de senso crítico e autonomia.
-          <a>Veja mais</a>
+          <br><br><a href="/static/pdf/lamina-SER-v3f-hotsite.pdf" target="_blank">Veja mais</a>
         </p>
       </div>
-    </div>
-
-    <div class="teaching-systems">
       <div class="teaching-systems__item bg-red">
         <img class="system-brand" src="/static/images/rede/logo-maxi.svg" alt="Maxi">
         <h2>Sistema de Ensino Maxi</h2>
@@ -41,7 +38,7 @@
           cognitiva e científica, autoconfiança e a autoestima para um crescimento social e afetivo, com pacotes que incentivam a
           leitura e opções de modelos de alfabetização. Uma proposta diferenciada que se baseia na Pedagogia Afetiva, contribuindo
           para a construção da identidade pessoal do aluno.
-          <a>Veja mais</a>
+          <br><br><a href="/static/pdf/laminas_Maxi-V4f-hotsite.pdf" target="_blank">Veja mais</a>
         </p>
       </div>
       <div class="teaching-systems__item blank">
@@ -60,7 +57,13 @@
 </script>
 <style lang="scss">
   .teaching__container {
+
     background-color: #e1e1e1;
+    box-sizing: border-box;
+
+    a {
+      color: #fff;
+    }
 
     .title {
       text-align: center;
@@ -86,17 +89,32 @@
 
     .teaching-systems {
       width: 75%;
-      margin: 110px auto 100px;
+      margin: 110px auto 0;
       display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
 
       &__item {
-        &:first-child {
-          margin-right: 20px;
-        }
-        width: 50%;
+        box-sizing: border-box;
+        width: 49%;
         padding: 45px;
         border-radius: 15px;
         background-color: #3493D6;
+        margin-bottom: 80px;
+
+        @media (max-width: 600px) {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 45px 25px;
+          margin-bottom: 80px;
+          &.blank {
+            display: none;
+          }
+        }
 
         .system-brand {
           width: 110px;

@@ -17,6 +17,26 @@ li {
   background: #ff0;
 }
 
+.modal-close {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.icon-clear {
+  background: url(/static/images/icons/icon-clear.svg);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
+.icon-menu {
+  background: url(/static/images/icons/icon-menu.svg);
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+}
+
 @keyframes shake {
   8%, 41% {
     transform: translateX(em(-10, 16));
@@ -39,5 +59,7 @@ li {
   }
 }
 
-@import '../../../node_modules/vue-material/src/components/mdOnboarding/mdBoards.scss';
+@import '../../../node_modules/vue-material/src/components/mdOnboarding/mdBoards';
+@import '../../../node_modules/vue-material/src/components/mdDialog/mdDialog';
+@import '../../../node_modules/vue-material/src/components/mdIcon/mdIcon';
 @import './typography';

@@ -2,61 +2,70 @@
   <div class="publishers__container">
     <h1 class="title">Nossas <span>editoras</span></h1>
 
-    <div class="publishers">
-      <div class="publishers__item bg-red">
-      <div class="system-brand"><img src="/static/images/rede/editora-atica.svg" alt="Editora Atica"></div>
-        <h2>Ática e Scipione</h2>
-        <p>
-          As Editoras Ática e Scipione são líderes no mercado de livros didáticos e paradidáticos e protagonizam inúmeras inovações
-          nas áreas editorial e de produtos educacionais. Juntas, contam com um portfolio de cerca de 2 mil títulos, que incluem
-          renomadas obras pedagógicas, clássicos das literaturas infantil e juvenil, atlas e dicionários.
-          <br><a href="http://www.aticascipione.com.br" target="_blank">Veja mais</a>
-        </p>
-      </div>
+    <img src="/static/images/editoras/garoto-sobre-livros.png" class="section-image" alt="">
 
-      <div class="publishers__item blank">
-        <img src="/static/images/editoras/garoto-sobre-livros.png" alt="">
-      </div>
-    </div>
+    <div class="content" v-html="content"></div>
 
     <div class="publishers">
-      <div class="publishers__item bg-green">
-      <div class="system-brand no-border"><img src="/static/images/rede/editora-saraiva.svg" alt="Editora Saraiva"></div>
-        <h2>Sistema de Ensino Maxi</h2>
+      <div v-for="publisher in publishers" class="publishers__item" :class="publisher.color">
+        <div v-if="publisher.logotype" class="system-brand" :class="{ 'no-border' : !border }"><img :src="publisher.logotype" :alt="publisher.title"></div>
+        <h2>{{ publisher.title }}</h2>
         <p>
-          As Editoras Ática e Scipione são líderes no mercado de livros didáticos e paradidáticos e protagonizam inúmeras inovações
-          nas áreas editorial e de produtos educacionais. Juntas, contam com um portfolio de cerca de 2 mil títulos, que incluem
-          renomadas obras pedagógicas, clássicos das literaturas infantil e juvenil, atlas e dicionários.
-          <br><a href="http://www.aticascipione.com.br" target="_blank">Veja mais</a>
-        </p>
-      </div>
-
-      <div class="publishers__item">
-        <div class="system-brand"><img src="/static/images/rede/editora-scipione.svg" alt="Editora Scipione"></div>
-        <h2>Sistema de Ensino Ser</h2>
-        <p>
-          O Ser oferece uma formação integral, construída desde os primeiros anos de vida do aluno, gerando capacidades alinhadas
-          com as exigências do mundo contemporâneo, como a criatividade e o empreendedorismo. Oferece flexibilidade ao educador e
-          se adapta ao formato pedagógico do município, baseando-se em seus três pilares: conhecimento prévio do aluno, formação
-          leitora e desenvolvimento de senso crítico e autonomia.
-          <br><a>Veja mais</a>
+          {{ publisher.content }}
+          <br><br><a v-if="publisher.link" :href="publisher.link" target="_blank">Veja mais</a>
         </p>
       </div>
     </div>
-
 
   </div>
 </template>
 
 <script>
   export default {
-    name: 'publishers'
+    name: 'teaching',
+    data () {
+      return {
+        content: '<p>A SOMOS Educação está preparada para apoiar as redes em todos os níveis, oferecendo uma ampla gama de conteúdos educacionais inovadores e de alta qualidade.</p><p>E para isso conta com as mais variadas obras didáticas e paradidaticas das conceituadas Editoras Atica, Scipione e Saraiva.</p>',
+        publishers: [{
+          color: 'bg-red',
+          logotype: '/static/images/rede/logo-anglo.svg',
+          title: 'Ática e Scipione',
+          content: 'As Editoras Ática e Scipione são líderes no mercado de livros didáticos e paradidáticos e protagonizam inúmeras inovações nas áreas editorial e de produtos educacionais. Juntas, contam com um portfolio de cerca de 2 mil títulos, que incluem renomadas obras pedagógicas, clássicos das literaturas infantil e juvenil, atlas e dicionários.',
+          link: 'http://www.aticascipione.com.br'
+        },
+        {
+          color: 'blank'
+        },
+        {
+          color: 'bg-blue',
+          logotype: '/static/images/rede/logo-ser.svg',
+          title: 'Editora Scipione',
+          content: 'As Editoras Ática e Scipione são líderes no mercado de livros didáticos e paradidáticos e protagonizam inúmeras inovações nas áreas editorial e de produtos educacionais. Juntas, contam com um portfolio de cerca de 2 mil títulos, que incluem renomadas obras pedagógicas, clássicos das literaturas infantil e juvenil, atlas e dicionários.',
+          link: 'http://www.aticascipione.com.br'
+        },
+        {
+          color: 'bg-green',
+          logotype: '/static/images/rede/logo-maxi.svg',
+          title: 'Saraiva',
+          content: 'Presente no segmento editorial desde 1917, a Saraiva Educação integra a SOMOS Educação desde dezembro de 2015, com um portfolio completo e sempre atenta ao desenvolvimento do estudante, a marca é referência na produção de conteúdo para a educação básica, preparatórios, ensino técnico e superior.',
+          link: 'http://www.editorasaraiva.com.br',
+          border: false
+        }]
+      }
+    }
   }
 </script>
 <style lang="scss">
   .publishers__container {
-    background-color: #e1e1e1;
+
     background: url(/static/images/editoras/background.jpg);
+    box-sizing: border-box;
+    position: relative;
+    background-size: auto 100%;
+
+    a {
+      color: #fff;
+    }
 
     .title {
       text-align: center;
@@ -73,26 +82,56 @@
     }
 
     .content {
-      text-align: justify;
-      width: 75%;
+      text-align: left;
+      width: 45%;
+      margin: 0 auto 0 12.5%;
       color: #fff;
       line-height: 1.6;
-      margin: 0 auto;
+
+      @media(max-width: 600px) {
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+
+    .section-image {
+      position: absolute;
+      top: -602px;
+      right: 67px;
+
+      @media(max-width: 600px) {
+        display: none;
+      }
     }
 
     .publishers {
       width: 75%;
-      margin: 110px auto 90px;
+      margin: 110px auto 0;
       display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      @media (max-width: 600px) {
+        flex-direction: column;
+      }
 
       &__item {
-        &:first-child {
-          margin-right: 20px;
-        }
-        width: 50%;
+        box-sizing: border-box;
+        width: 49%;
         padding: 45px;
         border-radius: 15px;
         background-color: #3493D6;
+        margin-bottom: 80px;
+
+        @media (max-width: 600px) {
+          width: 100%;
+          box-sizing: border-box;
+          padding: 45px 25px;
+          margin-bottom: 80px;
+          &.blank {
+            display: none;
+          }
+        }
 
         .system-brand {
           display: block;
@@ -133,14 +172,6 @@
 
         &.blank {
           background-color: transparent;
-          position: relative;
-          height: 100px;
-          margin-top: -800px;
-          padding: 0;
-
-          img {
-            margin-left: 50px;
-          }
         }
 
         &.bg-green {

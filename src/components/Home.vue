@@ -40,6 +40,12 @@
     display: flex;
     position: relative;
     flex-direction: column;
+
+
+    @media(max-width: 600px) {
+      overflow: hidden;
+      width: 100vw;
+    }
   }
 
   .main-content {

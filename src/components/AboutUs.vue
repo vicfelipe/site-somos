@@ -50,6 +50,10 @@
   .about-us__container {
     padding: 30px 80px;
 
+      @media(max-width: 600px) {
+        padding: 40px;
+      }
+
     .title {
       padding: 0;
       margin: 0 0 20px;
@@ -65,12 +69,20 @@
       text-align: justify;
       width: 680px;
       line-height: 1.6;
+
+      @media(max-width: 600px) {
+        width: 100%;
+      }
     }
 
     .section-image {
       position: absolute;
       right: 100px;
       top: 430px;
+
+      @media(max-width: 600px) {
+        display: none;
+      }
     }
 
     .brand-numbers {
@@ -81,10 +93,18 @@
         flex-direction: row;
         justify-content: space-between;
 
+        @media(max-width: 600px){
+          flex-direction: column;
+        }
+
         &__item {
           min-width: 300px;
           display: flex;
           align-items: center;
+
+          @media(max-width: 600px){
+            flex-direction: column;
+          }
         }
       }
 
@@ -110,6 +130,11 @@
 
       &__description {
         margin-left: 15px;
+
+        @media(max-width: 600px){
+          margin: 10px 0 20px;
+          text-align: center;
+        }
       }
     }
 
@@ -120,6 +145,14 @@
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
+
+        &__item {
+          @media(max-width: 600px){
+            width: 80px;
+            margin-bottom: 30px;
+            }
+        }
       }
     }
   }
