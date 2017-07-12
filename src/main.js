@@ -27,7 +27,6 @@ Vue.component('results', Results)
 Vue.component('teaching', Teaching)
 
 import VueMaterial from 'vue-material'
-
 Vue.use(VueMaterial)
 
 Vue.config.productionTip = false
