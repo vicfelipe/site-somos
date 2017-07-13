@@ -160,7 +160,7 @@
       padding: 20px 90px;
 
       @media(max-width: 600px) {
-        padding: 20px 9px 20px 20px;
+        padding: 20px;
         position: relative;
         justify-content: space-between;
       }

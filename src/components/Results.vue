@@ -4,7 +4,7 @@
     <ul class="results__list">
       <li class="results__list__item aumento-indicadores" id="aumento-indicadores">
         <h2 class="results__list__item__title">
-          Aumento dos Indicadores Educacionais<br>
+          Aumento dos Indicadores Educacionais
           <button class="icon-exclamation blue" @click="open(0)">!</button>
         </h2>
         <ul class="results-detail">
@@ -15,7 +15,7 @@
       </li>
       <li class="results__list__item desenvolvimento-pedagogico" id="desenvolvimento-pedagogico">
         <h2 class="results__list__item__title">
-          Desenvolvimento pedagógico de gestores e educadores<br>
+          Desenvolvimento pedagógico de gestores e educadores
           <button class="icon-exclamation pink" @click="open(1)">!</button>
         </h2>
         <ul class="results-detail">
@@ -26,7 +26,7 @@
       </li>
       <li class="results__list__item formacao-protagonistas" id="formacao-protagonistas">
         <h2 class="results__list__item__title">
-          Formação de alunos protagonistas do futuro<br>
+          Formação de alunos protagonistas do futuro
           <button class="icon-exclamation yellow" @click="open(2)">!</button>
         </h2>
         <ul class="results-detail">
@@ -139,9 +139,9 @@
           margin-left: 5px;
           text-align: center;
           font-size: 14px;
-          position: absolute;
+          position: relative;
           cursor: pointer;
-          top: 6px;
+          top: -2px;
           border: none;
           font-weight: bold;
 

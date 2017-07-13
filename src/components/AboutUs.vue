@@ -80,7 +80,7 @@
       right: 100px;
       top: 430px;
 
-      @media(max-width: 600px) {
+      @media(max-width: 1220px) {
         display: none;
       }
     }

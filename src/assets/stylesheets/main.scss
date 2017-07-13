@@ -37,6 +37,10 @@ li {
   display: inline-block;
 }
 
+div:focus{
+  outline: 0;
+}
+
 @keyframes shake {
   8%, 41% {
     transform: translateX(em(-10, 16));

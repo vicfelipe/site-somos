@@ -11,16 +11,16 @@
     <ul class="programs__list">
       <li class="programs__list__item first-line">
         <ul class="programs-detail">
-          <li class="programs-detail__item icon-first-line-1">O Líder em Mim<br><a class="further-details" href="/static/pdf/laminas_OLEM-V3f-hotsite.pdf">Veja mais</a></li>
-          <li class="programs-detail__item icon-first-line-2">Assessoria Pedagógica e Formação<br><a class="further-details" href="/static/pdf/Lamina-assessoria-V3f-hotsite.pdf">Veja mais</a></li>
-          <li class="programs-detail__item icon-first-line-3">Simulados e Avaliações Educacionais<br><a class="further-details" href="/static/pdf/laminas_avaliacoes-v4f-hotsite.pdf">Veja mais</a></li>
+          <li class="programs-detail__item icon-first-line-1">O Líder em Mim<br><a class="further-details" href="/static/pdf/laminas_OLEM-V3f-hotsite.pdf" target="_blank">Veja mais</a></li>
+          <li class="programs-detail__item icon-first-line-2">Assessoria Pedagógica e Formação<br><a class="further-details" href="/static/pdf/Lamina-assessoria-V3f-hotsite.pdf" target="_blank">Veja mais</a></li>
+          <li class="programs-detail__item icon-first-line-3">Simulados e Avaliações Educacionais<br><a class="further-details" href="/static/pdf/laminas_avaliacoes-v4f-hotsite.pdf" target="_blank">Veja mais</a></li>
         </ul>
       </li>
       <li class="programs__list__item second-line">
         <ul class="programs-detail">
-          <li class="programs-detail__item icon-second-line-1">Portais Educacionais<br><a v-show="false" class="further-details" href="/static/pdf/">Veja mais</a></li>
-          <li class="programs-detail__item icon-second-line-2">Projetos de leitura<br><a class="further-details" href="/static/pdf/laminas_Paradidaticos-V3f-hotsite.pdf">Veja mais</a></li>
-          <li class="programs-detail__item icon-second-line-3">Apoio e gestão<br><a v-show="false" class="further-details" href="/static/pdf/">Veja mais</a></li>
+          <li class="programs-detail__item icon-second-line-1">Portais Educacionais<br><a v-show="false" class="further-details" href="/static/pdf/" target="_blank">Veja mais</a></li>
+          <li class="programs-detail__item icon-second-line-2">Projetos de leitura<br><a class="further-details" href="/static/pdf/laminas_Paradidaticos-V3f-hotsite.pdf" target="_blank">Veja mais</a></li>
+          <li class="programs-detail__item icon-second-line-3">Apoio e gestão<br><a v-show="false" class="further-details" href="/static/pdf/" target="_blank">Veja mais</a></li>
         </ul>
       </li>
     </ul>
@@ -36,6 +36,7 @@
   .solutions__container {
     height: 630px;
     background: url(/static/images/solucao/background.jpg) no-repeat top center;
+    background-size: 100%;  
 
     @media (max-width: 600px) {
       height: auto;
