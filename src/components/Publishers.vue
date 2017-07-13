@@ -7,7 +7,7 @@
     <div class="content" v-html="content"></div>
 
     <div class="publishers">
-      <div v-for="publisher in publishers" class="publishers__item" :class="publisher.color">
+      <div v-for="publisher in publishers" class="publishers__item" :class="publisher.color" :key="publisher">
         <div v-if="publisher.logotype" class="system-brand" :class="{ 'no-border' : !border }"><img :src="publisher.logotype" :alt="publisher.title"></div>
         <h2>{{ publisher.title }}</h2>
         <p>

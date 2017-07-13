@@ -13,6 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "normalize-scss": "^7.0.0",
     "sass-loader": "^6.0.6",
     "vswipe": "^1.0.1",
