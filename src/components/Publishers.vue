@@ -7,7 +7,7 @@
     <div class="content" v-html="content"></div>
 
     <div class="publishers">
-      <div v-for="publisher in publishers" class="publishers__item" :class="publisher.color" :key="publisher">
+      <div v-for="publisher in publishers" class="publishers__item" :class="publisher.color" :key="publisher[0]">
         <div v-if="publisher.logotype" class="system-brand" :class="{ 'no-border' : !border }"><img :src="publisher.logotype" :alt="publisher.title"></div>
         <h2>{{ publisher.title }}</h2>
         <p>
@@ -26,9 +26,10 @@
     data () {
       return {
         content: '<p>A SOMOS Educação está preparada para apoiar as redes em todos os níveis, oferecendo uma ampla gama de conteúdos educacionais inovadores e de alta qualidade.</p><p>E para isso conta com as mais variadas obras didáticas e paradidaticas das conceituadas Editoras Atica, Scipione e Saraiva.</p>',
+        border: false,
         publishers: [{
           color: 'bg-red',
-          logotype: '/static/images/rede/logo-anglo.svg',
+          logotype: '/static/images/rede/editora-atica.svg',
           title: 'Ática e Scipione',
           content: 'As Editoras Ática e Scipione são líderes no mercado de livros didáticos e paradidáticos e protagonizam inúmeras inovações nas áreas editorial e de produtos educacionais. Juntas, contam com um portfolio de cerca de 2 mil títulos, que incluem renomadas obras pedagógicas, clássicos das literaturas infantil e juvenil, atlas e dicionários.',
           link: 'http://www.aticascipione.com.br'
@@ -38,18 +39,17 @@
         },
         {
           color: 'bg-blue',
-          logotype: '/static/images/rede/logo-ser.svg',
+          logotype: '/static/images/rede/editora-scipione.svg',
           title: 'Editora Scipione',
           content: 'As Editoras Ática e Scipione são líderes no mercado de livros didáticos e paradidáticos e protagonizam inúmeras inovações nas áreas editorial e de produtos educacionais. Juntas, contam com um portfolio de cerca de 2 mil títulos, que incluem renomadas obras pedagógicas, clássicos das literaturas infantil e juvenil, atlas e dicionários.',
           link: 'http://www.aticascipione.com.br'
         },
         {
           color: 'bg-green',
-          logotype: '/static/images/rede/logo-maxi.svg',
+          logotype: '/static/images/rede/editora-saraiva.svg',
           title: 'Saraiva',
           content: 'Presente no segmento editorial desde 1917, a Saraiva Educação integra a SOMOS Educação desde dezembro de 2015, com um portfolio completo e sempre atenta ao desenvolvimento do estudante, a marca é referência na produção de conteúdo para a educação básica, preparatórios, ensino técnico e superior.',
-          link: 'http://www.editorasaraiva.com.br',
-          border: false
+          link: 'http://www.editorasaraiva.com.br'
         }]
       }
     }

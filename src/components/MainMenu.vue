@@ -122,10 +122,10 @@
   }
 
   .menu__container {
-    z-index: 1000;
+    z-index: 1;
     height: 76px;
     position: fixed;
-    width: 1280px;
+    width: 100%;
 
     @media(max-width: 600px) {
       width: 100vw;

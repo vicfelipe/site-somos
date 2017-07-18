@@ -36,7 +36,7 @@
 <style lang="scss">
   .container {
     margin: 0 auto;
-    max-width: 1280px;
+    max-width: 100%;
     display: flex;
     position: relative;
     flex-direction: column;

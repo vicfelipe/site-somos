@@ -5,18 +5,18 @@
       <li class="results__list__item aumento-indicadores" id="aumento-indicadores">
         <h2 class="results__list__item__title">
           Aumento dos Indicadores Educacionais
-          <button class="icon-exclamation blue" @click="open(0)">!</button>
+          <button class="icon-exclamation blue" @click="open(0)">Veja Mais</button>
         </h2>
         <ul class="results-detail">
-          <li class="results-detail__item icon-indicadores-1">97% dos municípios acima da média nacional do IDEB</li>
-          <li class="results-detail__item icon-indicadores-2">93% dos municípios acima da sua meta do IDEB</li>
-          <li class="results-detail__item icon-indicadores-3">7 Municípios entre os 132 melhores indicadores do Brasil</li>
+          <li class="results-detail__item icon-indicadores-1">97% dos municípios parceiros acima da média nacional do IDEB</li>
+          <li class="results-detail__item icon-indicadores-2">93% dos municípios parceiros acima da sua meta do IDEB</li>
+          <li class="results-detail__item icon-indicadores-3">7 Municípios entre os melhores indicadores do Brasil</li>
         </ul>
       </li>
       <li class="results__list__item desenvolvimento-pedagogico" id="desenvolvimento-pedagogico">
         <h2 class="results__list__item__title">
           Desenvolvimento pedagógico de gestores e educadores
-          <button class="icon-exclamation pink" @click="open(1)">!</button>
+          <button class="icon-exclamation pink" @click="open(1)">Veja Mais</button>
         </h2>
         <ul class="results-detail">
           <li class="results-detail__item icon-desenvolvimento-1">Mais de 7000 professores formados no ano de 2016</li>
@@ -27,11 +27,11 @@
       <li class="results__list__item formacao-protagonistas" id="formacao-protagonistas">
         <h2 class="results__list__item__title">
           Formação de alunos protagonistas do futuro
-          <button class="icon-exclamation yellow" @click="open(2)">!</button>
+          <button class="icon-exclamation yellow" @click="open(2)">Veja Mais</button>
         </h2>
         <ul class="results-detail">
           <li class="results-detail__item icon-formacao-1">800 mil livros entregues a redes municipais no último ano</li>
-          <li class="results-detail__item icon-formacao-2">185 mil simulados aplicados</li>
+          <li class="results-detail__item icon-formacao-2">185 mil simulados aplicados em municipíos parceiros</li>
           <li class="results-detail__item icon-formacao-3">15 milhões de perguntas corrigidas com encaminhamentos</li>
         </ul>
       </li>

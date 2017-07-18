@@ -3,7 +3,7 @@
     <h1 class="title">Nossa <span>rede satisfeita</span></h1>
 
     <div class="carousel-container">
-      <div v-for="slide in slides" class="carousel-item" :style="{ backgroundImage: slide.bgimage }" :key="slide">
+      <div v-for="slide in slides" class="carousel-item" :style="{ backgroundImage: slide.bgimage }" :key="slide[0]">
         <div class="avatar-container">
           <img :src="slide.avatar">
         </div>

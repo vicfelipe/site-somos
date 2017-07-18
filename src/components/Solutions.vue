@@ -11,28 +11,87 @@
     <ul class="programs__list">
       <li class="programs__list__item first-line">
         <ul class="programs-detail">
-          <li class="programs-detail__item icon-first-line-1">O Líder em Mim<br><a class="further-details" href="/static/pdf/laminas_OLEM-V3f-hotsite.pdf" target="_blank">Veja mais</a></li>
-          <li class="programs-detail__item icon-first-line-2">Assessoria Pedagógica e Formação<br><a class="further-details" href="/static/pdf/Lamina-assessoria-V3f-hotsite.pdf" target="_blank">Veja mais</a></li>
-          <li class="programs-detail__item icon-first-line-3">Simulados e Avaliações Educacionais<br><a class="further-details" href="/static/pdf/laminas_avaliacoes-v4f-hotsite.pdf" target="_blank">Veja mais</a></li>
+          <li class="programs-detail__item icon-first-line-1">O Líder em Mim<br><span class="further-details veja-mais" @click="open(0)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-first-line-2">Assessoria Pedagógica e Formação<br><span class="further-details veja-mais" @click="open(1)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-first-line-3">Simulados e Avaliações Educacionais<br><span class="further-details veja-mais" @click="open(2)" target="_blank">Veja mais</span></li>
         </ul>
       </li>
       <li class="programs__list__item second-line">
         <ul class="programs-detail">
-          <li class="programs-detail__item icon-second-line-1">Portais Educacionais<br><a v-show="false" class="further-details" href="/static/pdf/" target="_blank">Veja mais</a></li>
-          <li class="programs-detail__item icon-second-line-2">Projetos de leitura<br><a class="further-details" href="/static/pdf/laminas_Paradidaticos-V3f-hotsite.pdf" target="_blank">Veja mais</a></li>
-          <li class="programs-detail__item icon-second-line-3">Apoio e gestão<br><a v-show="false" class="further-details" href="/static/pdf/" target="_blank">Veja mais</a></li>
+          <li class="programs-detail__item icon-second-line-1">Portais Educacionais<br><span v-show="false" class="further-details veja-mais" @click="open(3)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-second-line-2">Projetos de leitura<br><span class="further-details veja-mais" @click="open(4)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-second-line-3">Apoio e gestão<br><span v-show="false" class="further-details veja-mais" @click="open(5)" target="_blank">Veja mais</span></li>
         </ul>
       </li>
     </ul>
+
+    <md-dialog ref="modal" md-open-from="#btCallMe" md-close-to="#btCallMe">
+      <md-dialog-title>
+        <button @click="close()" class="modal-close"><i class="icon-clear"></i></button>
+      </md-dialog-title>
+      <md-dialog-content>
+        <iframe :src="modalContent[selectedModal].pdflink" width="960px" height="500px" align="center" style="border: none;"></iframe>
+      </md-dialog-content>
+    </md-dialog>
   </div>
 </template>
 
 <script>
   export default {
-    name: 'solutions'
+    name: 'solutions',
+    data () {
+      return {
+        modalContent: [
+          {
+            pdflink: '/static/pdf/laminas_OLEM-V3f-hotsite.pdf'
+          },
+          {
+            pdflink: '/static/pdf/Lamina-assessoria-V3f-hotsite.pdf'
+          },
+          {
+            pdflink: '/static/pdf/laminas_avaliacoes-v4f-hotsite.pdf'
+          },
+          {
+            pdflink: '/static/pdf/'
+          },
+          {
+            pdflink: '/static/pdf/laminas_Paradidaticos-V3f-hotsite.pdf'
+          },
+          {
+            pdflink: '/static/pdf/'
+          }
+        ],
+        selectedModal: 0,
+        clickedElement: null
+      }
+    },
+    methods: {
+      open (modalIndex) {
+        this.selectedModal = modalIndex
+        this.$refs.modal.open()
+      },
+      close () {
+        this.$refs.modal.close()
+      }
+    }
   }
 </script>
 <style lang="scss">
+  .md-dialog-container{
+    background-color: rgba(0,0,0,0.7) !important;
+  }
+  .md-dialog{
+    position: absolute;
+    z-index: 2;
+  }
+  .md-dialog-content{
+    overflow: hidden !important;
+  }
+  .veja-mais{
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: normal;
+  }
   .solutions__container {
     height: 630px;
     background: url(/static/images/solucao/background.jpg) no-repeat top center;
