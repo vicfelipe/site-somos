@@ -19,13 +19,13 @@
       </div>
 
       <div class="form-container__right">
-        <textarea placeholder="Mensagem" id="mensagem" name="mensagem" type="text"></textarea>
+        <textarea placeholder="Mensagem" id="mensagem" name="mensagem" type="text" style="resize: none;"></textarea>
         <button id="enviar" name="enviar">Enviar</button>
       </div>
     </div>
     <div class="footer">
       <strong>SOMOS Educação</strong> | 2017 - Todos os direitos reservados.<br>
-      Desenvolvido por Oficina de Marketing
+      <a href="https://www.oficinademarketing.com.br" target="_blank">Desenvolvido por Oficina de Marketing</a>
     </div>
   </div>
 </template>
@@ -108,19 +108,27 @@
 
       input, textarea, button {
         border: none;
-        padding: 5px;
+        padding: 10px;
         margin: 5px;
         display: block;
         width: 100%;
         box-sizing: border-box;
         font-family: sans-serif;
+        border-radius: 5px;
       }
 
       button {
         color: #fff;
-        background-color: rgba(204,21,74,1)
+        background-color: rgba(204,21,74,1);
+        cursor: pointer;
+        &:hover{
+          background-color: #ff5c8b;
+        }
+        &:focus{
+          background-color: #ff5c8b;
+        }
       }
-
+      
       #mensagem {
         flex-grow: 1;
       }
@@ -134,6 +142,11 @@
       width: 100%;
       font-size: 14px;
         box-sizing: border-box;
+      
+      a {
+        color: #EC3680;
+        text-decoration: none;
+      }
 
       strong {
         color: #fff;

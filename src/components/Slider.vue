@@ -20,7 +20,7 @@
 
     .md-boards .md-board {
       padding: 0;
-      width: 1280px;
+      width: 100%;
       height: 573px;
 
       @media(max-width: 600px) {
@@ -32,25 +32,35 @@
 
     #slide1 {
       background: url(/static/images/teaser/image1.jpg) no-repeat;
+      background-size: cover;
+      background-position: center;
 
       @media(max-width: 600px) {
         background: url(/static/images/teaser/image1-mobile.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
       }
     }
 
     #slide2 {
       background: url(/static/images/teaser/image2.jpg) no-repeat;
-
+      background-size: cover;
+      background-position: center;
       @media(max-width: 600px) {
         background: url(/static/images/teaser/image2-mobile.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
       }
     }
 
     #slide3{
       background: url(/static/images/teaser/image3.jpg) no-repeat;
-
+      background-size: cover;
+      background-position: center;
       @media(max-width: 600px) {
         background: url(/static/images/teaser/image3-mobile.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
       }
 
     }

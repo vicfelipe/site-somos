@@ -147,6 +147,7 @@
       background-color: transparent;
       display: none;
       z-index: 1005;
+      cursor: pointer;
 
       @media(max-width: 600px) {
         display: block;

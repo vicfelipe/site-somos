@@ -103,8 +103,8 @@
     .title {
       background-color: #C5C5C5;
       color: #000;
-      font-weight: normal;
-      padding: 22px 0 20px;
+      font-weight: 700;
+      padding: 40px 0;
       margin: 0;
 
       span {
