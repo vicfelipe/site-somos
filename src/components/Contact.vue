@@ -7,22 +7,25 @@
         <span>(11) 4383-8910</span>
       </p>
     </div>
+    <form id="contato" v-on:submit.prevent="onSubmit">
+      <div class="form-container">
+        <div class="form-container__left">
+            <input placeholder="Nome" id="nome" name="nome"  type="text" v-model="nome">
+            <input placeholder="DDD + Telefone" id="telefone" name="telefone" type="text" v-model="telefone">
+            <input placeholder="Email" id="email" name="email" type="text" v-model="email">
+            <input placeholder="Cargo" id="cargo" name="cargo" type="text" v-model="cargo">
+            <input placeholder="Estado" id="estado" name="estado" type="text" v-model="estado">
+            <input placeholder="Municipio" id="municipio" name="municipio" type="text" v-model="municipio">
+        </div>
 
-    <div class="form-container">
-      <div class="form-container__left">
-          <input placeholder="Nome" id="nome" name="nome"  type="text">
-          <input placeholder="DDD + Telefone" id="telefone" name="telefone" type="text">
-          <input placeholder="Email" id="email" name="email" type="text">
-          <input placeholder="Cargo" id="cargo" name="cargo" type="text">
-          <input placeholder="Estado" id="estado" name="estado" type="text">
-          <input placeholder="Municipio" id="municipio" name="municipio" type="text">
+        <div class="form-container__right">
+          <textarea v-model="mensagemuser" placeholder="Mensagem" id="mensagem" name="mensagem" type="text" style="resize: none;"></textarea>
+          <button id="enviar" type="submit" name="enviar">Enviar</button>
+        </div>
       </div>
+    </form>
 
-      <div class="form-container__right">
-        <textarea placeholder="Mensagem" id="mensagem" name="mensagem" type="text" style="resize: none;"></textarea>
-        <button id="enviar" name="enviar">Enviar</button>
-      </div>
-    </div>
+    
     <div class="footer">
       <strong>SOMOS Educação</strong> | 2017 - Todos os direitos reservados.<br>
       <a href="https://www.oficinademarketing.com.br" target="_blank">Desenvolvido por Oficina de Marketing</a>
@@ -35,9 +38,70 @@
     name: 'contact',
     data () {
       return {
-
+        nome: null,
+        telefone: null,
+        email: null,
+        cargo: null,
+        estado: null,
+        municipio: null,
+        mensagemuser: null,
+        mensagem: 'Mensagem do usuário:/n' + this.mensagemuser + 'Dados do usuário/nNome: ' + this.nome + '/nTelefone: ' + this.telefone + '/nE-mail: ' + this.email + '/nCargo: ' + this.cargo + '/nEstado: ' + this.estado + '/nMunicípio: ' + this.municipio + '/n'
       }
+    },
+    methods: {
+      // onSubmit: function () {
+      //   var emailjs = require('@/assets/js/emailjs')
+      //   emailjs.send('somos_educacao', 'somos_educacao', {
+      //     nome: this.nome,
+      //     telefone: this.telefone,
+      //     email: this.email,
+      //     cargo: this.cargo,
+      //     estado: this.estado,
+      //     municipio: this.municipio,
+      //     mensagem: this.mensagem
+      //   })
+      //   .then(function (response) {
+      //     console.log('SUCCESS. status=%d, text=%s', response.status, response.text)
+      //   }, function (err) {
+      //     console.log('FAILED. error=', err)
+      //   })
+      // }
     }
+      // enviarFormulario: function () {
+      //   var url = "https://api.mailgun.net/v3/oficinademarketing.com.br/messages"
+      //   var method = "POST"
+      //   var data = {
+      //     from: this.email,
+      //     to: 'victor@oficinademarketing.com.br',
+      //     subject: '[SITE SOMOS Rede Pública] Novo contato de '+this.nome,
+      //     text: this.mensagem
+      //   }
+
+      //   var async = true;
+      //   var request = new XMLHttpRequest();
+      //   request.onload = function () {
+      //     var status = request.status // HTTP response status, e.g., 200 for "200 OK"
+      //     var data = request.responseText // Returned data, e.g., an HTML document.
+      //   }
+      //   request.open(method, url, async)
+      //   request.setRequestHeader("Content-Type", "multipart/form-data;charset=UTF-8")
+      //   request.send(data)
+
+      //   // return emailjs.send('somos_educacao', 'somos_educacao', {
+      //   //   nome: this.nome,
+      //   //   telefone: this.telefone,
+      //   //   email: this.email,
+      //   //   cargo: this.cargo,
+      //   //   estado: this.estado,
+      //   //   municipio: this.municipio,
+      //   //   mensagem: this.mensagem
+      //   // })
+      //   // .then(function (response) {
+      //   //   console.log('SUCCESS. status=%d, text=%s', response.status, response.text)
+      //   // }, function (err) {
+      //   //   console.log('FAILED. error=', err)
+      //   // })
+      // }
   }
 </script>
 

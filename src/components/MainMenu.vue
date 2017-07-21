@@ -122,7 +122,7 @@
   }
 
   .menu__container {
-    z-index: 1;
+    z-index: 2;
     height: 76px;
     position: fixed;
     width: 100%;
