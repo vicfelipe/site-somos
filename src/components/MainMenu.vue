@@ -17,8 +17,8 @@
         <i class="icon-call-me"></i>
       </div>
       <ul class="social" :class="{ showing : showResponsiveMenu }">
-        <li class="social__facebook"></li>
-        <li class="social__instagram"></li>
+        <a href="https://www.facebook.com/SomosEducacao/" target="_blank"><li class="social__facebook"></li></a>
+        <a href="https://www.instagram.com/explore/locations/935739376/somos-educacao/" target="_blank"><li class="social__instagram"></li></a>
       </ul>
       <button class="hamb-menu" @click="toggleMenu"><i class="icon-menu"></i></button>
     </header>

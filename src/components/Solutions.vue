@@ -11,16 +11,16 @@
     <ul class="programs__list">
       <li class="programs__list__item first-line">
         <ul class="programs-detail">
-          <li class="programs-detail__item icon-first-line-1">O Líder em Mim<br><span class="further-details veja-mais" @click="open(0)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-first-line-1">O Líder em Mim <br><span class="further-details veja-mais" @click="open(0)" target="_blank">Veja mais</span></li>
           <li class="programs-detail__item icon-first-line-2">Assessoria Pedagógica e Formação<br><span class="further-details veja-mais" @click="open(1)" target="_blank">Veja mais</span></li>
           <li class="programs-detail__item icon-first-line-3">Simulados e Avaliações Educacionais<br><span class="further-details veja-mais" @click="open(2)" target="_blank">Veja mais</span></li>
         </ul>
       </li>
       <li class="programs__list__item second-line">
         <ul class="programs-detail">
-          <li class="programs-detail__item icon-second-line-1">Portais Educacionais<br><span v-show="false" class="further-details veja-mais" @click="open(3)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-second-line-1">Portais Educacionais<br><span class="further-details veja-mais" @click="open(3)" target="_blank">Veja mais</span></li>
           <li class="programs-detail__item icon-second-line-2">Projetos de leitura<br><span class="further-details veja-mais" @click="open(4)" target="_blank">Veja mais</span></li>
-          <li class="programs-detail__item icon-second-line-3">Apoio e gestão<br><span v-show="false" class="further-details veja-mais" @click="open(5)" target="_blank">Veja mais</span></li>
+          <li class="programs-detail__item icon-second-line-3">Apoio e Gestão<br><span class="further-details veja-mais" @click="open(5)" target="_blank">Veja mais</span></li>
         </ul>
       </li>
     </ul>
@@ -29,8 +29,8 @@
       <md-dialog-title>
         <button @click="close()" class="modal-close"><i class="icon-clear"></i></button>
       </md-dialog-title>
-      <md-dialog-content>
-        <iframe :src="modalContent[selectedModal].pdflink" width="960px" height="500px" align="center" style="border: none;"></iframe>
+      <md-dialog-content class="scroll">
+        <img :src="modalContent[selectedModal].imglink">
       </md-dialog-content>
     </md-dialog>
   </div>
@@ -43,22 +43,22 @@
       return {
         modalContent: [
           {
-            pdflink: '/static/pdf/laminas_OLEM-V3f-hotsite.pdf'
+            imglink: '/static/material/lamina-olem-pag1.jpg'
           },
           {
-            pdflink: '/static/pdf/Lamina-assessoria-V3f-hotsite.pdf'
+            imglink: '/static/material/lamina-assessoria-pag1.jpg'
           },
           {
-            pdflink: '/static/pdf/laminas_avaliacoes-v4f-hotsite.pdf'
+            imglink: '/static/material/lamina-avaliacoes-pag1.jpg'
           },
           {
-            pdflink: '/static/pdf/'
+            imglink: '/static/material/portais-educacionais.jpg'
           },
           {
-            pdflink: '/static/pdf/laminas_Paradidaticos-V3f-hotsite.pdf'
+            imglink: '/static/material/lamina-paradidaticos-pag1.jpg'
           },
           {
-            pdflink: '/static/pdf/'
+            imglink: '/static/material/lamina-assessoria-pag2.jpg'
           }
         ],
         selectedModal: 0,
@@ -78,14 +78,17 @@
 </script>
 <style lang="scss">
   .md-dialog-container{
-    background-color: rgba(0,0,0,0.7) !important;
+    background-color: rgba(0,0,0,0.6) !important;
   }
   .md-dialog{
     position: absolute;
     z-index: 2;
   }
-  .md-dialog-content{
-    overflow: hidden !important;
+  .scroll{
+    overflow: scroll !important;
+  }
+  .md-dialog-content img{
+    max-width: 100%;
   }
   .veja-mais{
     text-decoration: underline;
@@ -100,7 +103,7 @@
     @media (max-width: 600px) {
       height: auto;
       background-size: auto 100%;
-      padding-bottom: 50px;
+      padding-bottom: 49px;
     }
 
     a {

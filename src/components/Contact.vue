@@ -4,7 +4,7 @@
     <div class="content">
       <p>
         Preencha o formulário a seguir e agende uma visita com um de nossos consultores, ou se preferir, ligue agora para:<br>
-        <span>(11) 4383-8910</span>
+        <span>(11) 4383-8910 </span>
       </p>
     </div>
     <form id="contato" v-on:submit.prevent="onSubmit">
@@ -47,26 +47,25 @@
         mensagemuser: null,
         mensagem: 'Mensagem do usuário:/n' + this.mensagemuser + 'Dados do usuário/nNome: ' + this.nome + '/nTelefone: ' + this.telefone + '/nE-mail: ' + this.email + '/nCargo: ' + this.cargo + '/nEstado: ' + this.estado + '/nMunicípio: ' + this.municipio + '/n'
       }
-    },
-    methods: {
-      // onSubmit: function () {
-      //   var emailjs = require('@/assets/js/emailjs')
-      //   emailjs.send('somos_educacao', 'somos_educacao', {
-      //     nome: this.nome,
-      //     telefone: this.telefone,
-      //     email: this.email,
-      //     cargo: this.cargo,
-      //     estado: this.estado,
-      //     municipio: this.municipio,
-      //     mensagem: this.mensagem
-      //   })
-      //   .then(function (response) {
-      //     console.log('SUCCESS. status=%d, text=%s', response.status, response.text)
-      //   }, function (err) {
-      //     console.log('FAILED. error=', err)
-      //   })
-      // }
     }
+    // methods: {
+    //   onSubmit: function () {
+    //     emailjs.send('somos_educacao', 'somos_educacao', {
+    //       nome: this.nome,
+    //       telefone: this.telefone,
+    //       email: this.email,
+    //       cargo: this.cargo,
+    //       estado: this.estado,
+    //       municipio: this.municipio,
+    //       mensagem: this.mensagem
+    //     })
+    //     .then(function (response) {
+    //       console.log('SUCCESS. status=%d, text=%s', response.status, response.text)
+    //     }, function (err) {
+    //       console.log('FAILED. error=', err)
+    //     })
+    //   }
+    // }
       // enviarFormulario: function () {
       //   var url = "https://api.mailgun.net/v3/oficinademarketing.com.br/messages"
       //   var method = "POST"
@@ -146,7 +145,7 @@
 
       @media(max-width: 600px){
         flex-direction: column;
-        width: 100%;
+        width: auto;
       }
 
       &__right,

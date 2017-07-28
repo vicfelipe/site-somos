@@ -45,11 +45,13 @@
 
     <md-dialog ref="modal" md-open-from="#btCallMe" md-close-to="#btCallMe">
       <md-dialog-title>
+        <h3 class="text-left" style="float: left;">Mais informações em <a :href="modalContent[selectedModal].site" target="_blank">{{modalContent[selectedModal].site}}</a></h3>
         <button @click="close()" class="modal-close"><i class="icon-clear"></i></button>
       </md-dialog-title>
       <md-dialog-content>
-        <h1><a :href="modalContent[selectedModal].site" target="_blank">Ir para o {{modalContent[selectedModal].sistemaNome}}</a></h1>
-        <iframe :src="modalContent[selectedModal].pdflink" width="960px" height="500px" align="center" style="border: none;"></iframe>
+        <a :href="modalContent[selectedModal].site" target="_blank">
+          <img :src="modalContent[selectedModal].imglink">
+        </a>
       </md-dialog-content>
     </md-dialog>
   </div>
@@ -63,18 +65,18 @@
         modalContent: [
           {
             sistemaNome: 'Sistema de Ensino Anglo',
-            site: 'http://www.sistemaanglo.com.br/Paginas/Home.aspx',
-            pdflink: '/static/pdf/laminas_Anglo-V5f-hotsite.pdf'
+            site: 'http://www.sistemaanglo.com.br/',
+            imglink: '/static/material/lamina-anglo-pag1.jpg'
           },
           {
             sistemaNome: 'Sistema de Ensino SER',
-            site: 'http://www.ser.com.br/#/index',
-            pdflink: '/static/pdf/lamina-SER-v3f-hotsite.pdf'
+            site: 'http://www.ser.com.br/',
+            imglink: '/static/material/lamina-ser-pag1.jpg'
           },
           {
             sistemaNome: 'Sistema de Ensino Maxi',
-            site: 'http://www.sistemadeensinomaxi.com.br/#/index',
-            pdflink: '/static/pdf/laminas_Maxi-V4f-hotsite.pdf'
+            site: 'http://www.sistemadeensinomaxi.com.br/',
+            imglink: '/static/material/lamina-maxi-pag1.jpg'
           }
         ],
         selectedModal: 0,
@@ -99,9 +101,6 @@
   .md-dialog{
     position: absolute;
     z-index: 2;
-  }
-  .md-dialog-content{
-    overflow: hidden !important;
   }
   .veja-mais{
     text-decoration: underline;

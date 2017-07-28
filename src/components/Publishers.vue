@@ -61,7 +61,8 @@
     background: url(/static/images/editoras/background.jpg);
     box-sizing: border-box;
     position: relative;
-    background-size: auto 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
 
     a {
       color: #fff;

@@ -16,8 +16,12 @@
           <div class="brand-numbers__description">ESCOLAS</div>
         </li>
         <li class="brand-numbers__list__item">
-          <div class="brand-numbers__number">60%</div>
-          <div class="brand-numbers__description">DOS ALUNOS DO BRASIL</div>
+          <div class="brand-numbers__number">1 <span class="small-text">MILHÃO</span></div>
+          <div class="brand-numbers__description">DE ALUNOS NO BRASIL</div>
+        </li>
+        <li class="brand-numbers__list__item">
+          <div class="brand-numbers__number">200 <span>MIL</span></div>
+          <div class="brand-numbers__description">PROFESSORES</div>
         </li>
         <li class="brand-numbers__list__item">
           <div class="brand-numbers__number">40 <span class="small-text">MILHÕES</span></div>

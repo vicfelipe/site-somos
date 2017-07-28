@@ -77,6 +77,16 @@
       width: 84%;
       margin: 0 auto;
     }
+    @media(max-width: 600px){
+      .carousel-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: auto;
+        margin: 0 auto;
+      }
+    }
 
     .carousel-item {
       width: 300px;
@@ -98,6 +108,11 @@
           border: 2px solid white;
           border-radius: 50px;
         }
+      }
+    }
+    @media(max-width: 600px){
+      .carousel-item{
+        margin: 10px auto;
       }
     }
   }
